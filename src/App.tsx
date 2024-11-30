@@ -1,4 +1,3 @@
-import React from 'react';
 import BinarySearchVisualizer from './components/BinarySearchVisualizer';
 
 function App() {

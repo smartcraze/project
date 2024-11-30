@@ -8,7 +8,7 @@ interface ComplexityAnalysisProps {
 
 const ComplexityAnalysis: React.FC<ComplexityAnalysisProps> = ({ steps, arrayLength }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+    <div className="bg-cyan-500 rounded-lg shadow-lg p-6 mb-8">
       <h2 className="text-2xl font-bold mb-4 text-gray-800">Complexity Analysis</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

@@ -21,8 +21,8 @@ const ArrayInput: React.FC<ArrayInputProps> = ({ onArraySubmit }) => {
   };
 
   return (
-    <div className="flex flex-col gap-2 mb-4">
-      <label className="text-sm text-gray-600">
+    <div className="flex flex-col    gap-2 mb-4">
+      <label className="text-4xl text-gray-50">
         Enter comma-separated numbers (e.g., 1,5,8,12,15):
       </label>
       <div className="flex gap-2">
@@ -30,7 +30,7 @@ const ArrayInput: React.FC<ArrayInputProps> = ({ onArraySubmit }) => {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          className="flex-1 px-4 py-2 border rounded-md"
+          className="flex-1 px-4 py-2 text-black border rounded-md"
           placeholder="1,2,3,4,5"
         />
         <button

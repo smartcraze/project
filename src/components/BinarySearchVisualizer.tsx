@@ -30,43 +30,47 @@ const BinarySearchVisualizer: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4">
+    <div className="min-h-screen bg-gray-900 py-12 px-6">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
+        {/* Main Title */}
+        <h1 className="text-4xl font-bold text-center mb-8 text-white">
           Binary Search Visualization
         </h1>
         
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        {/* Controls Section */}
+        <div className="bg-gray-800 border border-gray-700 rounded-lg shadow-lg p-8 mb-8">
           <ArrayInput onArraySubmit={setArray} />
           
-          <div className="flex gap-4 mb-6">
+          <div className="flex gap-6 mb-6">
             <input
               type="number"
               value={target}
               onChange={(e) => setTarget(Number(e.target.value))}
-              className="px-4 py-2 border rounded-md"
+              className="px-6 py-3 border border-gray-600 rounded-md text-lg text-white bg-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter target number"
             />
             <button
               onClick={startSearch}
-              className="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors"
+              className="bg-blue-600 text-white px-8 py-3 rounded-md text-lg hover:bg-blue-500 transition-colors"
             >
               Start Search
             </button>
             <button
               onClick={initializeArray}
-              className="flex items-center gap-2 bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition-colors"
+              className="flex items-center gap-2 bg-gray-600 text-white px-8 py-3 rounded-md text-lg hover:bg-gray-500 transition-colors"
             >
-              <RotateCcw size={16} /> Reset
+              <RotateCcw size={18} /> Reset
             </button>
           </div>
 
+          {/* Array Visualization */}
           <ArrayVisualization
             array={array}
             currentStep={steps[currentStep]}
             target={target}
           />
 
+          {/* Step Explanation */}
           {steps[currentStep] && (
             <StepExplanation 
               step={steps[currentStep]}
@@ -74,6 +78,7 @@ const BinarySearchVisualizer: React.FC = () => {
             />
           )}
 
+          {/* Playback Controls */}
           <PlaybackControls
             onPrev={prevStep}
             onNext={nextStep}
@@ -84,12 +89,14 @@ const BinarySearchVisualizer: React.FC = () => {
           />
         </div>
 
+        {/* Complexity Analysis */}
         {steps.length > 0 && (
           <ComplexityAnalysis steps={steps} arrayLength={array.length} />
         )}
 
-        <div className="mt-8">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">Implementation</h2>
+        {/* Code Implementation */}
+        <div className="mt-12">
+          <h2 className="text-2xl font-bold mb-6 text-white">Implementation</h2>
           <CodeTabs currentStep={steps[currentStep]} />
         </div>
       </div>

@@ -26,9 +26,9 @@ const StepExplanation: React.FC<StepExplanationProps> = ({ step, target }) => {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200 mt-4">
-      <h3 className="font-semibold text-lg mb-2 text-gray-800">Step Explanation:</h3>
-      <pre className="whitespace-pre-wrap text-sm text-gray-600 font-mono">
+    <div className="bg-slate-800 text-white p-4 rounded-lg shadow-sm border border-gray-200 mt-4">
+      <h3 className="font-semibold text-lg mb-2 text-purple-400">Step Explanation:</h3>
+      <pre className="whitespace-pre-wrap text-lg text-white font-mono">
         {getExplanation()}
       </pre>
     </div>
